@@ -14,8 +14,8 @@ public class SfsDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfsDiApplication.class, args);
 		MyController myController = (MyController) ctx.getBean("myController");
-		String greeting = myController.sayHello();
-		System.out.println(greeting);
+		System.out.println("---------- Primary Bean");
+		System.out.println(myController.sayHello());
 		System.out.println("---------- Property");
 		PropertyInjectedController propertyInjectedController
 				= (PropertyInjectedController) ctx.getBean("propertyInjectedController");
