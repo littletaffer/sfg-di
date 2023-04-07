@@ -3,8 +3,10 @@ package student.springframework.sfsdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import student.springframework.sfsdi.controllers.*;
 
+@ComponentScan(basePackages = {"student.springframework.sfsdi","com.springframework.pets"})
 @SpringBootApplication
 public class SfsDiApplication {
 

@@ -1,4 +1,4 @@
-package student.springframework.sfsdi.services;
+package com.springframework.pets;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
