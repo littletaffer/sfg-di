@@ -2,7 +2,6 @@ package student.springframework.sfsdi.services;
 
 import org.springframework.stereotype.Service;
 
-@Service
 public class ConstructorGreetingService implements GreetingService {
 
     @Override
