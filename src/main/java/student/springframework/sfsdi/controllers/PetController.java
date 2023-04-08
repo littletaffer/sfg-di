@@ -1,7 +1,7 @@
 package student.springframework.sfsdi.controllers;
 
 import org.springframework.stereotype.Controller;
-import student.springframework.sfsdi.services.PetService;
+import com.springframework.pets.PetService;
 
 @Controller
 public class PetController {

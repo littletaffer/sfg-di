@@ -1,6 +1,5 @@
 package student.springframework.sfsdi.services;
 
-import ch.qos.logback.core.spi.LifeCycle;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +11,7 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class LifeCycleDemoBean implements InitializingBean, DisposableBean
-        ,BeanNameAware, BeanFactoryAware, ApplicationContextAware {
+        , BeanNameAware, BeanFactoryAware, ApplicationContextAware {
 
     public LifeCycleDemoBean() {
         System.out.println("## Inside the LifeCycleBean Constructor");
@@ -45,20 +44,20 @@ public class LifeCycleDemoBean implements InitializingBean, DisposableBean
     }
 
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         System.out.println("## The Post Construct annotated method has been called");
     }
 
     @PreDestroy
-    public void preDestroy(){
+    public void preDestroy() {
         System.out.println("## The Pre Destroy annotated method has been called");
     }
 
-    public void beforeInit(){
+    public void beforeInit() {
         System.out.println("## - Before Init - Called by Bean Post Processor");
     }
 
-    public void afterInit(){
+    public void afterInit() {
         System.out.println("## - After Init - Called by Bean Post Processor");
     }
 }
