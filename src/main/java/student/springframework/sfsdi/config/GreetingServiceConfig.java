@@ -2,13 +2,27 @@ package student.springframework.sfsdi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import student.springframework.sfsdi.services.ConstructorGreetingService;
-import student.springframework.sfsdi.services.PropertyInjectedGreetingService;
-import student.springframework.sfsdi.services.SetterInjectedGreetingService;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
+import student.springframework.sfsdi.services.*;
 
 @Configuration
 public class GreetingServiceConfig {
-
+    @Profile({"ESP","default"})
+    @Bean("i18nService")
+    I18nSpanishGreetingService ii8NSpanishService() {
+        return new I18nSpanishGreetingService();
+    }
+    @Profile("EN")
+    @Bean
+    I18nEnglishGreetingService i18nService(){
+        return new I18nEnglishGreetingService();
+    }
+    @Primary
+    @Bean
+    PrimaryGreetingService primaryGreetingService() {
+        return new PrimaryGreetingService();
+    }
     @Bean
     ConstructorGreetingService constructorGreetingService() {
         return new ConstructorGreetingService();
