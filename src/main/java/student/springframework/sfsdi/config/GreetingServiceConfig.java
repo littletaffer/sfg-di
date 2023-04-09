@@ -10,7 +10,6 @@ import student.springframework.sfsdi.repositories.EnglishGreetingRepositoryImpl;
 import student.springframework.sfsdi.services.*;
 
 @ImportResource("classpath:sfsdi-config.xml")
-@PropertySource("classpath:datasource.properties")
 @Configuration
 public class GreetingServiceConfig {
 
