@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import student.springframework.sfsdi.config.SfsConfiguration;
+import student.springframework.sfsdi.config.SfsConstructorConfig;
 import student.springframework.sfsdi.controllers.*;
 import student.springframework.sfsdi.datasource.FakeDataSource;
 import student.springframework.sfsdi.services.PrototypeBean;
@@ -63,6 +64,12 @@ public class SfsDiApplication {
 		System.out.println(sfsConfiguration.getUsername());
 		System.out.println(sfsConfiguration.getPassword());
 		System.out.println(sfsConfiguration.getJdbcUrl());
+
+		System.out.println("---------Constructor Binding---------");
+		SfsConstructorConfig sfsConstructorConfig = ctx.getBean(SfsConstructorConfig.class);
+		System.out.println(sfsConstructorConfig.getUsername());
+		System.out.println(sfsConstructorConfig.getPassword());
+		System.out.println(sfsConstructorConfig.getJdbcUrl());
 
 	}
 

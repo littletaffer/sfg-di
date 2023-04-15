@@ -3,22 +3,24 @@ package student.springframework.sfsdi.config;
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import student.springframework.sfsdi.datasource.FakeDataSource;
 import student.springframework.sfsdi.repositories.EnglishGreetingRepository;
 import student.springframework.sfsdi.repositories.EnglishGreetingRepositoryImpl;
 import student.springframework.sfsdi.services.*;
 
+@EnableConfigurationProperties(SfsConstructorConfig.class)
 @ImportResource("classpath:sfsdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(SfsConfiguration sfsConfiguration){
+    FakeDataSource fakeDataSource(SfsConstructorConfig sfsConstructorConfig){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(sfsConfiguration.getUsername());
-        fakeDataSource.setPassword(sfsConfiguration.getPassword());
-        fakeDataSource.setJdbcUrl(sfsConfiguration.getJdbcUrl());
+        fakeDataSource.setUsername(sfsConstructorConfig.getUsername());
+        fakeDataSource.setPassword(sfsConstructorConfig.getPassword());
+        fakeDataSource.setJdbcUrl(sfsConstructorConfig.getJdbcUrl());
         return fakeDataSource;
     }
 
