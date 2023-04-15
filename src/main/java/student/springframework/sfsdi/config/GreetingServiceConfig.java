@@ -14,13 +14,11 @@ import student.springframework.sfsdi.services.*;
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDataSource fakeDataSource(@Value("${student.username}") String username,
-                                  @Value("${student.password}") String password,
-                                  @Value("${student.jdbcUrl}") String jdbcUrl){
+    FakeDataSource fakeDataSource(SfsConfiguration sfsConfiguration){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcUrl(jdbcUrl);
+        fakeDataSource.setUsername(sfsConfiguration.getUsername());
+        fakeDataSource.setPassword(sfsConfiguration.getPassword());
+        fakeDataSource.setJdbcUrl(sfsConfiguration.getJdbcUrl());
         return fakeDataSource;
     }
 
