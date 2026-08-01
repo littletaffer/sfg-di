@@ -12,7 +12,9 @@ student:
 
 ---
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
 student:
     username: YmlProdUserName
     password: YmlProdPassword
