@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
+@Profile("!spanish & !polish")
 public class DiDataSource implements DataSource {
 
     private String user;
