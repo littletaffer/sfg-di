@@ -6,14 +6,14 @@ import student.springframework.sfsdi.services.spring2.GreetingService;
 @Controller
 public class MyController {
 
-    private final LegacyGreetingService legacyGreetingService;
+    private final GreetingService greetingService;
 
-    public MyController(LegacyGreetingService legacyGreetingService) {
-        this.legacyGreetingService = legacyGreetingService;
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String sayHello() {
-        return legacyGreetingService.sayGreeting();
+        return greetingService.sayGreeting();
     }
 
 }

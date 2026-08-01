@@ -10,9 +10,9 @@ public class PropertyInjectedController {
     //The least favorable
     @Autowired
     @Qualifier("propertyInjectedGreetingService")
-    public LegacyGreetingService legacyGreetingService;
+    public GreetingService greetingService;
 
     public String getGreeting(){
-        return legacyGreetingService.sayGreeting();
+        return greetingService.sayGreeting();
     }
 }

@@ -2,18 +2,18 @@ package student.springframework.sfsdi.controllers.spring2;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import student.springframework.sfsdi.services.GreetingService;
+import student.springframework.sfsdi.services.spring2.GreetingService;
 
 @Controller
 public class I18nController {
 
-    private final LegacyGreetingService legacyGreetingService;
+    private final GreetingService greetingService;
 
-    public I18nController(@Qualifier("i18nService") LegacyGreetingService legacyGreetingService) {
-        this.legacyGreetingService = legacyGreetingService;
+    public I18nController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String sayHello(){
-        return legacyGreetingService.sayGreeting();
+        return greetingService.sayGreeting();
     }
 }

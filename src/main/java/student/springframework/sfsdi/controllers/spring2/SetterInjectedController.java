@@ -8,18 +8,18 @@ import student.springframework.sfsdi.services.spring2.GreetingService;
 public class SetterInjectedController {
 
     //Using the setter injector method.
-    private LegacyGreetingService legacyGreetingService;
+    private GreetingService greetingService;
 
-    public LegacyGreetingService getGreetingService() {
-        return legacyGreetingService;
+    public GreetingService getGreetingService() {
+        return greetingService;
     }
     @Qualifier("setterInjectedGreetingService")
     @Autowired
-    public void setGreetingService(LegacyGreetingService legacyGreetingService) {
-        this.legacyGreetingService = legacyGreetingService;
+    public void setGreetingService(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     public String getGreeting(){
-        return legacyGreetingService.sayGreeting();
+        return greetingService.sayGreeting();
     }
 }
