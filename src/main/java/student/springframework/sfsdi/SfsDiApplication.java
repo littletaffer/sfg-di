@@ -5,20 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import student.springframework.sfsdi.config.SfsConfiguration;
 import student.springframework.sfsdi.config.SfsConstructorConfig;
-import student.springframework.sfsdi.controllers.*;
-import student.springframework.sfsdi.datasource.FakeDataSource;
-import student.springframework.sfsdi.services.PrototypeBean;
-import student.springframework.sfsdi.services.SingletonBean;
+import student.springframework.sfsdi.controllers.spring2.*;
+import student.springframework.sfsdi.datasource.spring2.FakeDataSource;
+import student.springframework.sfsdi.services.spring2.PrototypeBean;
+import student.springframework.sfsdi.services.spring2.SingletonBean;
 
 @SpringBootApplication
 public class SfsDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfsDiApplication.class, args);
-
-		PetController petController = ctx.getBean("petController", PetController.class);
-		System.out.println("--- The Best Pet is ---");
-		System.out.println(petController.whichPetIsTheBest());
 
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
