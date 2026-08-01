@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="constructorGreetingService" class="student.springframework.sfsdi.services.ConstructorLegacyGreetingService" />
+    <bean name="constructorGreetingService" class="student.springframework.sfsdi.services.spring2.ConstructorGreetingService" />
 
 </beans>

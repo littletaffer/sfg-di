@@ -1,9 +1,7 @@
 package student.springframework.sfsdi.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 
-@ConstructorBinding
 @ConfigurationProperties("student")
 public class SfsConstructorConfig {
     private final String username;

@@ -1,13 +1,11 @@
 package student.springframework.sfsdi.config;
 
-import com.springframework.pets.PetService;
-import com.springframework.pets.PetServiceFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
-import student.springframework.sfsdi.datasource.FakeDataSource;
-import student.springframework.sfsdi.repositories.EnglishGreetingRepository;
-import student.springframework.sfsdi.repositories.EnglishGreetingRepositoryImpl;
-import student.springframework.sfsdi.services.*;
+import student.springframework.sfsdi.datasource.spring2.FakeDataSource;
+import student.springframework.sfsdi.repositories.spring2.EnglishGreetingRepository;
+import student.springframework.sfsdi.repositories.spring2.EnglishGreetingRepositoryImpl;
+import student.springframework.sfsdi.services.spring2.*;
 
 @EnableConfigurationProperties(SfsConstructorConfig.class)
 @ImportResource("classpath:sfsdi-config.xml")
@@ -21,23 +19,6 @@ public class GreetingServiceConfig {
         fakeDataSource.setPassword(sfsConstructorConfig.getPassword());
         fakeDataSource.setJdbcUrl(sfsConstructorConfig.getJdbcUrl());
         return fakeDataSource;
-    }
-
-    @Bean
-    PetServiceFactory petServiceFactory() {
-        return new PetServiceFactory();
-    }
-
-    @Profile({"dog","default"})
-    @Bean
-    PetService dogPetService(PetServiceFactory petServiceFactory) {
-        return petServiceFactory.getPetService("dog");
-    }
-
-    @Profile("cat")
-    @Bean
-    PetService catPetService(PetServiceFactory petServiceFactory) {
-        return petServiceFactory.getPetService("cat");
     }
 
     @Profile({"ESP","default"})
