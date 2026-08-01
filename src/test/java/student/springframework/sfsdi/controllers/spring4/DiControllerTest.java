@@ -8,6 +8,8 @@ import student.springframework.sfsdi.repositories.spring4.DiRepoImpl;
 import student.springframework.sfsdi.repositories.spring4.Repo;
 import student.springframework.sfsdi.services.spring4.DiService;
 import student.springframework.sfsdi.services.spring4.DiServiceImpl;
+import student.springframework.sfsdi.services.spring4.EmailService;
+import student.springframework.sfsdi.services.spring4.SmsService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,7 +24,7 @@ public class DiControllerTest {
     void setUp() {
         diDataStore = new DiDataSource("testUser", "testPassword", "testUrl");
         diRepo = new DiRepoImpl(diDataStore);
-        diService = new DiServiceImpl(diRepo);
+        diService = new DiServiceImpl(diRepo, new EmailService(), new SmsService());
         diController = new DiController(diService);
     }
 

@@ -8,6 +8,8 @@ import student.springframework.sfsdi.datasource.spring4.DiDataSource;
 import student.springframework.sfsdi.datasource.spring4.PolishDiDataSource;
 import student.springframework.sfsdi.repositories.spring4.DiRepoImpl;
 import student.springframework.sfsdi.services.spring4.DiServiceImpl;
+import student.springframework.sfsdi.services.spring4.EmailService;
+import student.springframework.sfsdi.services.spring4.SmsService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,7 +18,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         DiServiceImpl.class,
         DiRepoImpl.class,
         DiDataSource.class,
-        PolishDiDataSource.class
+        PolishDiDataSource.class,
+        EmailService.class,
+        SmsService.class
 })
 @ActiveProfiles("polish")
 class DiControllerPolishProfileTest {
