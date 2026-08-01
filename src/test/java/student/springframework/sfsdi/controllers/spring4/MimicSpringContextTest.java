@@ -7,6 +7,7 @@ import student.springframework.sfsdi.datasource.spring4.DiDataSource;
 import student.springframework.sfsdi.repositories.spring4.DiRepoImpl;
 import student.springframework.sfsdi.repositories.spring4.Repo;
 import student.springframework.sfsdi.services.spring4.DiService;
+import student.springframework.sfsdi.services.spring4.DiServiceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class MimicSpringContextTest {
         addBean("repo", new DiRepoImpl(
                 (DataSource) getBean("dataStore")
         ));
-        addBean("diService", new DiService.DiServiceImpl((Repo) getBean("repo")));
+        addBean("diService", new DiServiceImpl((Repo) getBean("repo")));
         addBean("diController", new DiController((DiService) getBean("diService")));
     }
 

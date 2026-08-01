@@ -1,7 +1,10 @@
 package student.springframework.sfsdi.datasource.spring4;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DiDataSource implements DataSource {
 
     private String user;

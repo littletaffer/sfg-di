@@ -1,10 +1,10 @@
 package student.springframework.sfsdi.controllers.spring4;
 
-import student.springframework.sfsdi.services.spring4.DiService;
+import student.springframework.sfsdi.services.spring4.LegacyGreetingService;
 
 public class LegacyController {
     public String getGreeting() {
-        DiService.LegacyGreetingService legacyGreetingService = new DiService.LegacyGreetingService();
+        LegacyGreetingService legacyGreetingService = new LegacyGreetingService();
 
         return legacyGreetingService.getGreeting();
     }
