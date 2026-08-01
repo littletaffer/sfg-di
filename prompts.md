@@ -41,3 +41,14 @@ In the package `student.springframework.sfsdi.services.spring4` to the following
    called, use the emailService bean to send the message to email, and use the smsService to send the message to sms.
 5. Create a new test to test the services are called. Use Mockito a mockito mock for the Repo dependency. Use mockito
    spies to verify the email and sms services are called.
+
+
+# Lesson: Externalized Properties in Spring Boot
+# Junie
+Your task is to demonstrate the usage of profile specific properties files. These properties files will be used
+to set the database properties of the DataStore implementations in this project.
+
+Complete the following tasks:
+1. In the file `src/main/resources.application.properties` change the database url to use an h2 in-memory database.
+2. Create a new application.properties file for the profile "spanish" with the user, password and url for a MySQL database.
+3. Create a new application.yaml properties file for the profile "polish" with the user, password and url for a MySQL database.
