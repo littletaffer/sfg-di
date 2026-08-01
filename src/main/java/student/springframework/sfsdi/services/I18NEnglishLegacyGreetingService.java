@@ -2,9 +2,9 @@ package student.springframework.sfsdi.services;
 
 import student.springframework.sfsdi.repositories.EnglishGreetingRepository;
 
-public class I18nEnglishGreetingService implements GreetingService {
+public class I18NEnglishLegacyGreetingService implements LegacyGreetingService {
 
-    public I18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository) {
+    public I18NEnglishLegacyGreetingService(EnglishGreetingRepository englishGreetingRepository) {
         this.englishGreetingRepository = englishGreetingRepository;
     }
 

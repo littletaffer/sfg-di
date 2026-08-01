@@ -28,4 +28,8 @@ public class FakeDataSource {
     public void setJdbcUrl(String jdbcUrl) {
         this.jdbcUrl = jdbcUrl;
     }
+
+    public String queryDatabase(){
+        return "Hello World";
+    }
 }

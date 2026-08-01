@@ -1,6 +1,6 @@
 package student.springframework.sfsdi.services;
 
-public class ConstructorGreetingService implements GreetingService {
+public class ConstructorLegacyGreetingService implements LegacyGreetingService {
 
     @Override
     public String sayGreeting() {

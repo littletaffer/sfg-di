@@ -2,7 +2,7 @@ package student.springframework.sfsdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import student.springframework.sfsdi.services.ConstructorGreetingService;
+import student.springframework.sfsdi.services.ConstructorLegacyGreetingService;
 
 class PropertyInjectedControllerTest {
 
@@ -11,7 +11,7 @@ class PropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new PropertyInjectedController();
-        controller.greetingService = new ConstructorGreetingService();
+        controller.legacyGreetingService = new ConstructorLegacyGreetingService();
     }
 
     @Test

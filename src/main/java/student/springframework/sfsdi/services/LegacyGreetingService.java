@@ -1,5 +1,5 @@
 package student.springframework.sfsdi.services;
 
-public interface GreetingService {
+public interface LegacyGreetingService {
     String sayGreeting();
 }

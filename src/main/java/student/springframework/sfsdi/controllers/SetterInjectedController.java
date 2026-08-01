@@ -3,23 +3,23 @@ package student.springframework.sfsdi.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import student.springframework.sfsdi.services.GreetingService;
+import student.springframework.sfsdi.services.LegacyGreetingService;
 @Controller
 public class SetterInjectedController {
 
     //Using the setter injector method.
-    private GreetingService greetingService;
+    private LegacyGreetingService legacyGreetingService;
 
-    public GreetingService getGreetingService() {
-        return greetingService;
+    public LegacyGreetingService getGreetingService() {
+        return legacyGreetingService;
     }
     @Qualifier("setterInjectedGreetingService")
     @Autowired
-    public void setGreetingService(GreetingService greetingService) {
-        this.greetingService = greetingService;
+    public void setGreetingService(LegacyGreetingService legacyGreetingService) {
+        this.legacyGreetingService = legacyGreetingService;
     }
 
     public String getGreeting(){
-        return greetingService.sayGreeting();
+        return legacyGreetingService.sayGreeting();
     }
 }

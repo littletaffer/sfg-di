@@ -1,6 +1,6 @@
 package student.springframework.sfsdi.services;
 
-public class PrimaryGreetingService implements GreetingService {
+public class PrimaryLegacyGreetingService implements LegacyGreetingService {
     @Override
     public String sayGreeting() {
         return "Hello World - From the PRIMARY bean!";

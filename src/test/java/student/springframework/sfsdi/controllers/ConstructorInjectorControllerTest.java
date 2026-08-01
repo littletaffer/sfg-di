@@ -2,7 +2,7 @@ package student.springframework.sfsdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import student.springframework.sfsdi.services.ConstructorGreetingService;
+import student.springframework.sfsdi.services.ConstructorLegacyGreetingService;
 
 class ConstructorInjectorControllerTest {
 
@@ -10,7 +10,7 @@ class ConstructorInjectorControllerTest {
 
     @BeforeEach
     void setUp() {
-        controller = new ConstructorInjectorController(new ConstructorGreetingService());
+        controller = new ConstructorInjectorController(new ConstructorLegacyGreetingService());
     }
 
     @Test

@@ -1,6 +1,6 @@
 package student.springframework.sfsdi.services;
 
-public class PropertyInjectedGreetingService implements GreetingService {
+public class PropertyInjectedLegacyGreetingService implements LegacyGreetingService {
     @Override
     public String sayGreeting() {
         return "Hello World -- Property";

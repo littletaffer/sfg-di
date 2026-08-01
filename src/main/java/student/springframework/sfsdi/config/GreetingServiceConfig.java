@@ -2,7 +2,6 @@ package student.springframework.sfsdi.config;
 
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import student.springframework.sfsdi.datasource.FakeDataSource;
@@ -43,8 +42,8 @@ public class GreetingServiceConfig {
 
     @Profile({"ESP","default"})
     @Bean("i18nService")
-    I18nSpanishGreetingService ii8NSpanishService() {
-        return new I18nSpanishGreetingService();
+    I18NSpanishLegacyGreetingService ii8NSpanishService() {
+        return new I18NSpanishLegacyGreetingService();
     }
 
     @Bean
@@ -54,22 +53,22 @@ public class GreetingServiceConfig {
 
     @Profile("EN")
     @Bean
-    I18nEnglishGreetingService i18nService(EnglishGreetingRepository englishGreetingRepository){
-        return new I18nEnglishGreetingService(englishGreetingRepository);
+    I18NEnglishLegacyGreetingService i18nService(EnglishGreetingRepository englishGreetingRepository){
+        return new I18NEnglishLegacyGreetingService(englishGreetingRepository);
     }
     @Primary
     @Bean
-    PrimaryGreetingService primaryGreetingService() {
-        return new PrimaryGreetingService();
+    PrimaryLegacyGreetingService primaryGreetingService() {
+        return new PrimaryLegacyGreetingService();
     }
 
     @Bean
-    PropertyInjectedGreetingService propertyInjectedGreetingService() {
-        return new PropertyInjectedGreetingService();
+    PropertyInjectedLegacyGreetingService propertyInjectedGreetingService() {
+        return new PropertyInjectedLegacyGreetingService();
     }
 
     @Bean
-    SetterInjectedGreetingService setterInjectedGreetingService(){
-        return new SetterInjectedGreetingService();
+    SetterInjectedLegacyGreetingService setterInjectedGreetingService(){
+        return new SetterInjectedLegacyGreetingService();
     }
 }
